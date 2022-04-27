@@ -53,11 +53,13 @@ export default class Game {
     this.current_col = 0;
 
     if(lettersRight == 5) {
-      document.querySelector("messages").innerHTML = "YOU WIN!";
+      document.querySelector("#messages").innerHTML = "YOU WIN!";
+      document.querySelector("#game-keyboard").style.display = "none";
     }
 
     if(this.current_row > 4) {
-      document.querySelector("messages").innerHTML = this.wordOfDay.toUpperCase();
+      document.querySelector("#messages").innerHTML = this.wordOfDay.toUpperCase();
+      document.querySelector("#game-keyboard").style.display = "none";
     }
   }
 
