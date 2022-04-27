@@ -16,10 +16,10 @@ export default class Game {
       return;
     }
 
-    if(letter = "DEL") {
-      this.deleteChar();
-      return;
-    }
+    //if(letter = "DEL") {
+    //  this.deleteChar();
+    //  return;
+    //}
     this.game_matix[this.current_row][this.current_col].innerHTML = letter;
     this.currentGuess += letter;
     if(this.game_matix[this.current_row].length > this.current_col+1) {
