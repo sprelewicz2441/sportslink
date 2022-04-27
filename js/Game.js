@@ -53,11 +53,11 @@ export default class Game {
     this.current_col = 0;
 
     if(lettersRight == 5) {
-      alert("YOU WIN!")
+      document.querySelector("messages").innerHTML = "YOU WIN!";
     }
 
     if(this.current_row > 4) {
-      alert("The word was " + this.wordOfDay.toUpperCase());
+      document.querySelector("messages").innerHTML = this.wordOfDay.toUpperCase();
     }
   }
 
