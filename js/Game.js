@@ -57,7 +57,7 @@ export default class Game {
     }
 
     if(this.current_row > 4) {
-      alert("The word was " + this.wordOfDay.toUpperCase);
+      alert("The word was " + this.wordOfDay.toUpperCase());
     }
   }
 
