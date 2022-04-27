@@ -39,12 +39,19 @@ export default class Game {
     const rowTiles = this.game_matix[this.current_row];
     let lettersRight = 0;
     for (var i = 0; i < rowTiles.length; i++) {
+      const keyboardLetter = document.querySelector('[data-letter="' + rowTiles[i].innerHTML + '"]');
       if(rowTiles[i].innerHTML == this.wordOfDay[i]) {
+        keyboardLetter.classList.remove("key-default");
+        keyboardLetter.classList.add("correct-key-letter");
         rowTiles[i].classList.add("correct-letter");
         lettersRight++;
       } else if (this.wordOfDay.includes(rowTiles[i].innerHTML)) {
+        keyboardLetter.classList.remove("key-default");
+        keyboardLetter.classList.add("contains-letter");
         rowTiles[i].classList.add("contains-letter");
       } else {
+        keyboardLetter.classList.remove("key-default");
+        keyboardLetter.classList.add("nope-key-letter");
         rowTiles[i].classList.add("nope-letter");
       }
     }
