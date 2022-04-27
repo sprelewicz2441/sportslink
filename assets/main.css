@@ -15,6 +15,13 @@ header {
   max-height:  10vh;
 }
 
+h2 {
+  color:  gold;
+  margin-bottom: 5px;
+}
+h3 {
+  color:  green;
+}
 #game-board {
   height: 50vh;
   max-height: 50vh;
@@ -96,5 +103,10 @@ header {
 
 .contains-letter {
   background:  darkkhaki;
+  color:  white;
+}
+
+.nope-letter {
+  background:  black;
   color:  white;
 }

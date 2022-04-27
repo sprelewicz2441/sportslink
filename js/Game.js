@@ -7,7 +7,7 @@ export default class Game {
     this.current_row = 0;
     this.current_col = 0;
     this.currentGuess = '';
-    this.wordOfDay = "bauer"
+    this.wordOfDay = "reich"
   }
 
   handleKeyPress(letter) {
@@ -16,34 +16,49 @@ export default class Game {
       return;
     }
 
-    //if(letter = "DEL") {
-    //  this.deleteChar();
-    //  return;
-    //}
-    this.game_matix[this.current_row][this.current_col].innerHTML = letter;
-    this.currentGuess += letter;
-    if(this.game_matix[this.current_row].length > this.current_col+1) {
+    if(letter == "DEL") {
+      this.deleteChar();
+      return;
+    }
+    
+    if(this.game_matix[this.current_row].length >= this.current_col+1) {
+      this.game_matix[this.current_row][this.current_col].innerHTML = letter;
+      this.currentGuess += letter;
       this.current_col++;
     }
   }
 
-  checkWord() {
-    if(this.currentGuess.length < 5) {
-      alert("Not enough letters");
-      return;
+  deleteChar() {
+    if(this.current_col > 0) {
+      this.current_col--;
+      this.game_matix[this.current_row][this.current_col].innerHTML = '';
     }
+  }
 
+  checkWord() {
     const rowTiles = this.game_matix[this.current_row];
+    let lettersRight = 0;
     for (var i = 0; i < rowTiles.length; i++) {
       if(rowTiles[i].innerHTML == this.wordOfDay[i]) {
         rowTiles[i].classList.add("correct-letter");
+        lettersRight++;
       } else if (this.wordOfDay.includes(rowTiles[i].innerHTML)) {
         rowTiles[i].classList.add("contains-letter");
+      } else {
+        rowTiles[i].classList.add("nope-letter");
       }
     }
 
     this.current_row++;
     this.current_col = 0;
+
+    if(lettersRight == 5) {
+      alert("You Win!")
+    }
+
+    if(this.current_row > 4) {
+      alert("The word was " + this.wordOfDay);
+    }
   }
 
   setupGameboard(board) {
