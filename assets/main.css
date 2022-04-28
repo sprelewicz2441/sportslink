@@ -109,8 +109,7 @@ h3 {
 }
 
 .nope-letter {
-  background:  black;
-  color:  white;
+  background: lightgray;
 }
 .correct-key-letter {
   background: green;
