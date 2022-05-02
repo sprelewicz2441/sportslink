@@ -7,7 +7,7 @@ export default class Game {
     this.current_row = 0;
     this.current_col = 0;
     this.currentGuess = '';
-    this.wordOfDay = "drury"
+    this.wordOfDay = "bruce"
   }
 
   handleKeyPress(letter) {
