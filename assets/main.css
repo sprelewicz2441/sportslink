@@ -7,6 +7,7 @@ body {
 }
 
 header {
+  height: 10vh;
   max-height:  10vh;
 }
 
@@ -22,8 +23,8 @@ h3 {
   color: red;
 }
 #game-board {
-  height: 60vh;
-  max-height: 60vh;
+  height: 55vh;
+  max-height: 55vh;
   width:  80%;
   max-width:  400px;
   padding: 10px;
