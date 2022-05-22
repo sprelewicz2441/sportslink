@@ -24,7 +24,7 @@ h3 {
 #game-board {
   height: 50vh;
   max-height: 50vh;
-  max-width:  500px;
+  max-width:  400px;
   padding: 10px;
 }
 
@@ -70,12 +70,10 @@ h3 {
   flex: 1 1 0px;
   border: 1px solid grey;
   margin: 3px;
-  width: 100%;
   justify-content: center;
   align-items: center;
   font-size: 2rem;
   line-height: 2rem;
-  padding-top: 2%;
   font-weight: bold;
   vertical-align: middle;
   box-sizing: border-box;
