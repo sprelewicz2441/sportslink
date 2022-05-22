@@ -44,6 +44,7 @@ export default class Game {
         keyboardLetter.classList.remove("key-default");
         keyboardLetter.classList.add("correct-key-letter");
         rowTiles[i].classList.add("correct-letter");
+        rowTiles[i].classList.add("letterAnimation")
         lettersRight++;
       } else if (this.wordOfDay.includes(rowTiles[i].innerHTML)) {
         keyboardLetter.classList.remove("key-default");
