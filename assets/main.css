@@ -37,10 +37,13 @@ h3 {
   display: flex;
   flex-direction: row;
   width: 100%;
+  line-height: 2rem;
+  align-items: center;
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 5px;
   touch-action: manipulation;
   height:  20%;
+  margin:  5px;
 }
 
 #game-keyboard button {
@@ -67,24 +70,24 @@ h3 {
 }
 
 .game-tile {
+  display: flex;
   flex: 1 1 0px;
   border: 1px solid grey;
-  margin: 3px;
+  margin: 1px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  height: 2.5rem;
+  width: 2.5rem;
+  padding:  10px;
   justify-content: center;
   align-items: center;
-  font-size: 2rem;
-  line-height: 2rem;
-  font-weight: bold;
-  vertical-align: middle;
-  box-sizing: border-box;
-  color: black;
   text-transform: uppercase;
-  user-select: none;
 } 
 
 .centered {
   margin:  0 auto;
   text-align: center;
+  vertical-align: middle;
 } 
 
 .keyboard-row {
@@ -118,9 +121,10 @@ h3 {
 
 #game-wrapper {
   min-width: 300px;
-  max-width:  600px;
-  min-height: 500px;
+  max-width:  500px;
+  min-height: 400px;
   max-height: 500px;
+  font-family: 'Clear Sans', 'Helvetica Neue', Arial, sans-serif;
 }
 
   
