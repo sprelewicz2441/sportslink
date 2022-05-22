@@ -3,12 +3,7 @@
 }
 
 body {
-  width: 100%;
-}
-
-header {
-  height: 10vh;
-  max-height:  10vh;
+  height: 100vh;
 }
 
 h2 {
