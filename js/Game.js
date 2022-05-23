@@ -84,7 +84,6 @@ export default class Game {
       });
       matrix.push(current_row);
     });
-    console.log(matrix);
     return matrix;
   }
 
