@@ -164,6 +164,9 @@ h3 {
   min-width:  13%;
 }
 
+.letter-border {
+  border: solid black 2px;
+}
 @-webkit-keyframes letterAnimation {
   0% {
     -webkit-transform: rotateX(0);

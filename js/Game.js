@@ -23,6 +23,7 @@ export default class Game {
     
     if(this.game_matix[this.current_row].length >= this.current_col+1) {
       this.game_matix[this.current_row][this.current_col].innerHTML = letter;
+      this.game_matix[this.current_row][this.current_col].classList.add("letter-border");
       this.currentGuess += letter;
       this.current_col++;
     }
@@ -31,6 +32,7 @@ export default class Game {
   deleteChar() {
     if(this.current_col > 0) {
       this.current_col--;
+      this.game_matix[this.current_row][this.current_col].classList.remove("letter-border");
       this.game_matix[this.current_row][this.current_col].innerHTML = '';
     }
   }
