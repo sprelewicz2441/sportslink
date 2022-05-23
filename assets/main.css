@@ -7,9 +7,9 @@ body {
   font-family: 'Clear Sans', 'Helvetica Neue', Arial, sans-serif;
 }
 
-h2 {
+header h2 {
   color:  blue;
-  margin-bottom: 5px;
+  margin: 10px;
 }
 h3 {
   color:  green;
@@ -128,7 +128,31 @@ h3 {
 }
 
 .footballred {
-  color: red;
+  color: #C60C30;
+}
+
+.footballblue {
+  color: #00338D;
+}
+
+.hockeygold {
+  color: #FCB514;
+}
+
+.hockeyblue {
+  color: #002654;
+}
+
+.basketballorange {
+  color: #ff6314;
+}
+
+.basketballblack {
+  color: black;
+}
+
+.lacrosse {
+  color:  #f58220;
 }
   
 .letterAnimation {
