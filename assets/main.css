@@ -4,10 +4,11 @@
 
 body {
   height: 100vh;
+  font-family: 'Clear Sans', 'Helvetica Neue', Arial, sans-serif;
 }
 
 h2 {
-  color:  gold;
+  color:  blue;
   margin-bottom: 5px;
 }
 h3 {
@@ -124,9 +125,11 @@ h3 {
   max-width:  500px;
   min-height: 400px;
   max-height: 500px;
-  font-family: 'Clear Sans', 'Helvetica Neue', Arial, sans-serif;
 }
 
+.footballred {
+  color: red;
+}
   
 .letterAnimation {
   -webkit-animation: letterAnimation 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
