@@ -7,7 +7,47 @@ export default class Game {
     this.current_row = 0;
     this.current_col = 0;
     this.currentGuess = '';
-    this.wordOfDay = "ennis"
+    this.allGuesses = [];
+    this.wordOfDay = "ennis";
+    this.lcldb = localforage.createInstance({
+      name: "Buffale",
+      storeName: "stateandstats"
+    });;
+    
+    this.statekey = "buffastate"; //Key for storing game state
+    this.statuskey = "buffastatus";
+    this.statskey = "buffastats";
+    this.stampkey = "buffastamp";
+
+    const wod_ts = 1;
+
+    let self = this;
+    self.lcldb.getItem(self.stampkey, function(err, stamp) {
+      if(wod_ts == stamp) {
+        self.lcldb.getItem(self.statuskey, function(err, status) {
+          if(status == 'ACTIVE') {
+            console.log("Game is active");
+            self.unwindActiveGame();
+          }
+        });
+      } else {
+        self.lcldb.setItem(self.stampkey, wod_ts);
+      }
+    });
+    
+  }
+
+  unwindActiveGame() {
+    self = this;
+    this.lcldb.getItem(this.statekey, function(err, words) {
+      if(words.length > 0) {
+        for (var i = 0; i < words.length; i++) {
+          console.log(words[i]);
+          [...words[i]].forEach(l => self.handleKeyPress(l))
+          self.checkWord();
+        }
+      }
+    });
   }
 
   handleKeyPress(letter) {
@@ -24,7 +64,6 @@ export default class Game {
     if(this.game_matix[this.current_row].length >= this.current_col+1) {
       this.game_matix[this.current_row][this.current_col].innerHTML = letter;
       this.game_matix[this.current_row][this.current_col].classList.add("letter-border");
-      this.currentGuess += letter;
       this.current_col++;
     }
   }
@@ -40,8 +79,10 @@ export default class Game {
   checkWord() {
     const rowTiles = this.game_matix[this.current_row];
     let lettersRight = 0;
+    this.currentGuess = '';
     for (var i = 0; i < rowTiles.length; i++) {
       const keyboardLetter = document.querySelector('[data-letter="' + rowTiles[i].innerHTML + '"]');
+      this.currentGuess += rowTiles[i].innerHTML;
       rowTiles[i].classList.remove("letter-border");
       if(rowTiles[i].innerHTML == this.wordOfDay[i]) {
         keyboardLetter.classList.remove("key-default");
@@ -62,13 +103,16 @@ export default class Game {
 
     this.current_row++;
     this.current_col = 0;
+    this.allGuesses.push(this.currentGuess);
+    this.lcldb.setItem(this.statekey, this.allGuesses);
+    this.lcldb.setItem(this.statuskey, "ACTIVE");
 
     if(lettersRight == 5) {
       document.querySelector("#messages").innerHTML = "YOU WIN!";
       document.querySelector("#game-keyboard").style.display = "none";
     }
 
-    if(this.current_row > 4) {
+    if(this.current_row >= 5 && lettersRight != 5) {
       document.querySelector("#messages").innerHTML = this.wordOfDay.toUpperCase();
       document.querySelector("#game-keyboard").style.display = "none";
     }
