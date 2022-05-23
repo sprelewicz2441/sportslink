@@ -42,6 +42,7 @@ export default class Game {
     let lettersRight = 0;
     for (var i = 0; i < rowTiles.length; i++) {
       const keyboardLetter = document.querySelector('[data-letter="' + rowTiles[i].innerHTML + '"]');
+      rowTiles[i].classList.remove("letter-border");
       if(rowTiles[i].innerHTML == this.wordOfDay[i]) {
         keyboardLetter.classList.remove("key-default");
         keyboardLetter.classList.add("correct-key-letter");
