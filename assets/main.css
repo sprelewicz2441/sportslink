@@ -161,7 +161,7 @@ h3 {
 }
 
 .special-key {
-  width:  150%;
+  min-width:  13%;
 }
 
 @-webkit-keyframes letterAnimation {
