@@ -8,7 +8,7 @@ export default class Game {
     this.current_col = 0;
     this.currentGuess = '';
     this.allGuesses = [];
-    this.wordOfDay = "ennis";
+    this.wordOfDay = "poyer";
     this.lcldb = localforage.createInstance({
       name: "Buffale",
       storeName: "stateandstats"
@@ -19,7 +19,7 @@ export default class Game {
     this.statskey = "buffastats";
     this.stampkey = "buffastamp";
 
-    const wod_ts = 1;
+    const wod_ts = 2;
 
     let self = this;
     self.lcldb.getItem(self.stampkey, function(err, stamp) {
