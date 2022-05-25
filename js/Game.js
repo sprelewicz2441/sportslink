@@ -28,7 +28,6 @@ export default class Game {
       if(wod_ts == stamp) {
         self.lcldb.getItem(self.statuskey, function(err, status) {
           if(status == 'ACTIVE' || status == 'COMPLETE') {
-            console.log("Game is active");
             self.unwindActiveGame();
           }
         });
@@ -144,7 +143,6 @@ export default class Game {
       }
       
       self.lcldb.getItem(self.statskey, function(err, obj) {
-        console.log(status);
         if(!obj) {
           obj = {};
         }
@@ -162,6 +160,14 @@ export default class Game {
             obj.current_streak = cs;
           } else {
             obj.current_streak = 1;
+          }
+
+          if(obj && obj.max_streak) {
+            if (obj.current_streak > obj.max_streak) {
+              obj.max_streak = obj.current_streak;
+            }
+          } else {
+            obj.max_streak = 1;
           }
 
         } else {
