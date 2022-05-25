@@ -170,7 +170,28 @@ export default class Game {
             obj.max_streak = 1;
           }
 
+          if(obj && obj.guesses) {
+            if(obj.guesses[self.current_row]) {
+              obj.guesses[self.current_row] += 1;
+            } else {
+              obj.guesses[self.current_row] = 1;
+            }
+          } else {
+            obj.guesses = [];
+            obj.guesses[self.current_row] = 1;
+          }
+
         } else {
+          if(obj.guesses) {
+            if(obj.guesses['fail']) {
+              obj.guesses['fail'] += 1;
+            } else {
+              obj.guesses['fail'] = 1;
+            }
+          } else {
+            obj.guesses = [];
+            obj.guesses['fail'] = 1;
+          }
           obj.current_streak = 0;
         }
      
