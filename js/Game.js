@@ -64,7 +64,7 @@ export default class Game {
       self.guess_dist = obj.guess_dist || [];
       self.populateStatsOverlay();
       if(self.games_played == 0) {
-        this.showHelpOverlay();
+        self.showHelpOverlay();
       }
     });
   }
