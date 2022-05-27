@@ -9,7 +9,7 @@ export default class Game {
     this.currentGuess = '';
     this.game_status = '';
     this.allGuesses = [];
-    this.wordOfDay = "eakin";
+    this.wordOfDay = "tyrod";
 
     // Setup cache
     this.lcldb = localforage.createInstance({
@@ -22,7 +22,7 @@ export default class Game {
     this.statskey = "buffastats";
     this.stampkey = "buffastamp";
 
-    let wod_ts = 7;
+    let wod_ts = 10;
 
     let self = this;
     self.lcldb.getItem(self.stampkey, function(err, stamp) {
