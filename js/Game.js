@@ -22,7 +22,7 @@ export default class Game {
     this.statskey = "buffastats";
     this.stampkey = "buffastamp";
 
-    let wod_ts = 11;
+    let wod_ts = 12;
 
     let self = this;
     self.lcldb.getItem(self.stampkey, function(err, stamp) {
