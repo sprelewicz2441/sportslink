@@ -16,8 +16,13 @@ header h2 {
 h3 {
   color:  green;
 }
+#close-stats-modal {
+  padding: 10px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: large;
+}
 #messages {
-  font-size: 48px;
   color: red;
 }
 #game-board {
@@ -90,6 +95,10 @@ h3 {
   vertical-align: middle;
 } 
 
+.left-aligned {
+  text-align: left;
+}
+
 .keyboard-row {
   display: flex;
   flex-direction: row;
@@ -127,6 +136,7 @@ h3 {
   max-width:  500px;
   min-height: 400px;
   max-height: 500px;
+  margin-top: 20px;
 }
 
 .footballred {
@@ -177,6 +187,15 @@ h3 {
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #f58220;
 }
+
+.footballbluetext {
+  color: #00338D;
+}
+
+.site-header {
+  width:  98vw;
+  border-bottom: solid black 1px;
+}
   
 .letterAnimation {
   -webkit-animation: letterAnimation 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
@@ -190,6 +209,27 @@ h3 {
 .letter-border {
   border: solid black 2px;
 }
+
+.overlay {
+  border:  1px solid black;
+  width:  80vw;
+  height: 80vh;
+  position: absolute;
+  top: 50px;
+  padding:  30px;
+  margin:  0 auto;
+  background-color: white;
+}
+
+.close-button {
+  text-align: right;
+}
+
+.large-message {
+  padding: 20px;
+  font-size: x-large;
+}
+
 @-webkit-keyframes letterAnimation {
   0% {
     -webkit-transform: rotateX(0);

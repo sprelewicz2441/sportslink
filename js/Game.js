@@ -7,8 +7,9 @@ export default class Game {
     this.current_row = 0;
     this.current_col = 0;
     this.currentGuess = '';
+    this.game_status = '';
     this.allGuesses = [];
-    this.wordOfDay = "tyrod";
+    this.wordOfDay = "eakin";
 
     // Setup cache
     this.lcldb = localforage.createInstance({
@@ -21,22 +22,38 @@ export default class Game {
     this.statskey = "buffastats";
     this.stampkey = "buffastamp";
 
-    let wod_ts = 5;
+    let wod_ts = 7;
 
     let self = this;
     self.lcldb.getItem(self.stampkey, function(err, stamp) {
       if(wod_ts == stamp) {
         self.lcldb.getItem(self.statuskey, function(err, status) {
+          self.game_status = status;
           if(status == 'ACTIVE' || status == 'COMPLETE') {
             self.unwindActiveGame();
           }
         });
       } else {
         self.lcldb.setItem(self.stampkey, wod_ts);
+        self.game_status = "ACTIVE";
         self.lcldb.setItem(self.statuskey, "ACTIVE");
       }
     });
-    
+    this.init();
+  }
+
+  init() {
+    const self = this;
+    this.lcldb.getItem(self.statskey, function(err, obj) {
+      if(!obj) {
+        obj = {};
+      }
+      self.games_played = obj.games_played || 0;
+      self.games_won = obj.games_won || 0;
+      self.current_streak = obj.current_streak || 0;
+      self.max_streak = obj.max_streak || 0;
+      self.guess_dist = obj.guess_dist || [];
+    });
   }
 
   unwindActiveGame() {
@@ -79,7 +96,8 @@ export default class Game {
 
   checkWord() {
     const rowTiles = this.game_matix[this.current_row];
-    if(rowTiles.length != 5) {return;}
+
+    if(this.current_col < 5) {return;}
     let lettersRight = 0;
     this.currentGuess = '';
     for (var i = 0; i < rowTiles.length; i++) {
@@ -107,104 +125,95 @@ export default class Game {
     this.current_col = 0;
     this.allGuesses.push(this.currentGuess);
     this.lcldb.setItem(this.statekey, this.allGuesses);
-    let self = this;
     if(lettersRight == 5) {
       document.querySelector("#messages").innerHTML = "YOU WIN!";
       document.querySelector("#game-keyboard").style.display = "none";
-
-      this.lcldb.setItem(this.statuskey, "WON", function() {
-        self.endGame();
-      });
-        
+      if(this.game_status != "COMPLETE") {
+        this.game_status = "WIN";
+      }
+      this.endGame();
     } else {
-      this.lcldb.setItem(this.statuskey, "ACTIVE");
+      this.game_status = "ACTIVE";
     }
 
     if(this.current_row >= 5 && lettersRight != 5) {
-      this.lcldb.setItem(this.statuskey, "LOST", function() {
-        self.endGame();
-      });
-      
+      if(this.game_status != "COMPLETE") {
+        this.game_status = "LOST";
+      }
+      this.lcldb.setItem(this.statuskey, this.game_status);
+      this.endGame();
       document.querySelector("#messages").innerHTML = this.wordOfDay.toUpperCase();
       document.querySelector("#game-keyboard").style.display = "none";
     }
+
+    this.lcldb.setItem(this.statuskey, this.game_status);
   }
 
   endGame() {
+    let self = this;
     this.updateStats();
-    this.lcldb.setItem(this.statuskey, "COMPLETE");
+    this.lcldb.setItem(self.statuskey, "COMPLETE");   
+    this.game_status = "COMPLETE";
+    this.showStatsOverlay();
+  }
+
+  showStatsOverlay() {
+    const overlay = document.querySelector("#stats-overlay");
+    overlay.style.display = "block";
+    document.querySelector("#win-percentage").innerHTML = Math.round(this.games_won/this.games_played)*100 + '% Wins';
+    document.querySelector("#games_played").innerHTML = this.games_played;
+    document.querySelector("#games_won").innerHTML = this.games_won;
+    document.querySelector("#current_streak").innerHTML = this.current_streak;
+    document.querySelector("#max_streak").innerHTML = this.max_streak;
+    document.querySelector("#guess-brkdwn-1").innerHTML = this.guess_dist[1] || 0;
+    document.querySelector("#guess-brkdwn-2").innerHTML = this.guess_dist[2] || 0;
+    document.querySelector("#guess-brkdwn-3").innerHTML = this.guess_dist[3] || 0;
+    document.querySelector("#guess-brkdwn-4").innerHTML = this.guess_dist[4] || 0;
+    document.querySelector("#guess-brkdwn-5").innerHTML = this.guess_dist[5] || 0;
+    document.querySelector("#guess-brkdwn-fail").innerHTML = this.guess_dist['fail'] || 0;
   }
 
   updateStats() {
-    const self = this;
-    this.lcldb.getItem(this.statuskey, function(err, status) {
-      if (status == "COMPLETE") {
-        return;
+    if (this.game_status == "COMPLETE") {
+      return;
+    }
+    
+    const obj = {};
+
+    if(this.game_status == "WIN") {
+      this.games_won += 1;
+      obj.games_won = this.games_won;
+
+      this.current_streak += 1;
+      obj.current_streak = this.current_streak;
+
+      if (this.current_streak > this.max_streak) {
+        this.max_streak = this.current_streak;
+        obj.max_streak = this.max_streak;
+        
       }
-      
-      self.lcldb.getItem(self.statskey, function(err, obj) {
-        if(!obj) {
-          obj = {};
-        }
 
-        if(status == "WON") {
-          if(obj && obj.games_won) {
-            let gw = obj.games_won + 1;
-            obj.games_won = gw;
-          } else {
-            obj.games_won = 1;
-          }
+      if(this.guess_dist[this.current_row]) {
+        this.guess_dist[this.current_row] += 1;
+      } else {
+        this.guess_dist[this.current_row] = 1;
+      }
+    } else {
+      if(this.guess_dist['fail']) {
+        this.guess_dist['fail'] += 1;
+      } else {
+        this.guess_dist['fail'] = 1;
+      }
 
-          if(obj && obj.current_streak) {
-            let cs = obj.current_streak + 1;
-            obj.current_streak = cs;
-          } else {
-            obj.current_streak = 1;
-          }
+      obj.current_streak = 0;
+      this.current_streak = 0;
+    }
 
-          if(obj && obj.max_streak) {
-            if (obj.current_streak > obj.max_streak) {
-              obj.max_streak = obj.current_streak;
-            }
-          } else {
-            obj.max_streak = 1;
-          }
+    obj.guess_dist = this.guess_dist;
+    this.games_played += 1;
+    obj.games_played = this.games_played;
 
-          if(obj && obj.guesses) {
-            if(obj.guesses[self.current_row]) {
-              obj.guesses[self.current_row] += 1;
-            } else {
-              obj.guesses[self.current_row] = 1;
-            }
-          } else {
-            obj.guesses = [];
-            obj.guesses[self.current_row] = 1;
-          }
-
-        } else {
-          if(obj.guesses) {
-            if(obj.guesses['fail']) {
-              obj.guesses['fail'] += 1;
-            } else {
-              obj.guesses['fail'] = 1;
-            }
-          } else {
-            obj.guesses = [];
-            obj.guesses['fail'] = 1;
-          }
-          obj.current_streak = 0;
-        }
-     
-        if(obj && obj.games_played) {
-          let gp = obj.games_played + 1;
-          obj.games_played = gp;
-        } else {
-          obj.games_played = 1;
-        }
-
-        self.lcldb.setItem(self.statskey, obj);
-      });
-    });
+    this.lcldb.setItem(this.statskey, obj);
   }
 
   setupGameboard(board) {

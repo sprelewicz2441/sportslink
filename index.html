@@ -13,7 +13,7 @@
 </head>
 
 <body>
-  <header class="centered">
+  <header class="centered site-header">
     <h2><span class="footballred">B</span><span class="footballblue">U</span><span class="hockeygold">F</span><span class="hockeyblue">F</span><span class="basketballorange">A</span><span class="basketballblack">L</span><span class="lacrosse">E</span></h2>
   </header>
   <div id="game-wrapper" class="centered">
@@ -57,6 +57,26 @@
         <div class="game-tile"></div>
       </div>
     </div>
+
+    <div id="stats-overlay" class="overlay left-aligned" hidden>
+      <header class="close-button"><span id="close-stats-modal"><strong>X</strong></span></header>
+      <div id="win-percentage" class="large-message centered footballbluetext"></div>
+      <div><strong>Games Played:</strong> <span id="games_played"> </span></div>
+      <div><strong>Games Won:</strong> <span id="games_won"> </span></div>
+      <div><strong>Current Streak:</strong> <span id="current_streak"> </span></div>
+      <div><strong>Longest Streak:</strong> <span id="max_streak"> </span></div>
+    
+      <div id="win-percentage" class="large-message centered footballbluetext"># of Guesses</div>
+      <div><strong>1:</strong> <span id="guess-brkdwn-1"> </span></div>
+      <div><strong>2:</strong> <span id="guess-brkdwn-2"> </span></div>
+      <div><strong>3:</strong> <span id="guess-brkdwn-3"> </span></div>
+      <div><strong>4:</strong> <span id="guess-brkdwn-4"> </span></div>
+      <div><strong>5:</strong> <span id="guess-brkdwn-5"> </span></div>
+      <div><strong>Fails:</strong> <span id="guess-brkdwn-fail"> </span></div>
+
+      <div class="large-message footballbluetext">Next Buffale: Friday, May 27 around 5:00 PM EST</div>
+    </div> 
+
     <div id="game-keyboard">
       <div class="keyboard-row">
         <button class="key-default" data-letter="q">q</button>
