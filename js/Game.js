@@ -22,7 +22,7 @@ export default class Game {
     this.statskey = "buffastats";
     this.stampkey = "buffastamp";
 
-    let wod_ts = 12;
+    let wod_ts = 13;
 
     let self = this;
     self.lcldb.getItem(self.stampkey, function(err, stamp) {
@@ -154,6 +154,7 @@ export default class Game {
     this.lcldb.setItem(this.statuskey, "COMPLETE");   
     this.game_status = "COMPLETE";
 
+    let self = this;
     setTimeout(() => {
       self.showStatsOverlay();
     }, "1000")
