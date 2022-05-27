@@ -9,8 +9,8 @@ export default class Game {
     this.currentGuess = '';
     this.game_status = '';
     this.allGuesses = [];
-    this.wordOfDay = "power";
-    this.game_hint = "Sabres";
+    this.wordOfDay = "poyer";
+    this.game_hint = "Bills";
     this.alert_box = document.querySelector("#alerts");
 
     // Setup cache
