@@ -2,6 +2,10 @@
   margin:  0;
 }
 
+p {
+  margin: 10px;
+}
+
 body {
   height: 100vh;
   font-family: 'Clear Sans', 'Helvetica Neue', Arial, sans-serif;
@@ -81,8 +85,8 @@ h3 {
   margin: 1px;
   font-size: 2.5rem;
   font-weight: 700;
-  height: 2.5rem;
-  width: 2.5rem;
+  height: 2rem;
+  width: 2rem;
   padding:  10px;
   justify-content: center;
   align-items: center;
@@ -193,8 +197,12 @@ h3 {
 }
 
 .site-header {
-  width:  98vw;
+  display: flex;
+  flex-direction: row;
+  width:  100%;
   border-bottom: solid black 1px;
+  justify-content: space-evenly;
+  align-items: center;
 }
   
 .letterAnimation {
@@ -212,10 +220,14 @@ h3 {
 
 .overlay {
   border:  1px solid black;
-  width:  80vw;
+  width:  70vw;
+  max-width: 400px;
   height: 80vh;
+  max-height: 450px;
   position: absolute;
-  top: 50px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   padding:  30px;
   margin:  0 auto;
   background-color: white;
@@ -225,9 +237,19 @@ h3 {
   text-align: right;
 }
 
+.open-button {
+  padding: 10px;
+  cursor: pointer;
+}
+
 .large-message {
   padding: 20px;
   font-size: x-large;
+}
+
+.medium-message {
+  padding-top: 20px;
+  font-size: large;
 }
 
 @-webkit-keyframes letterAnimation {

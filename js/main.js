@@ -8,3 +8,15 @@ window.addEventListener('DOMContentLoaded', (event) => {
 document.querySelector("#close-stats-modal").addEventListener('click', (event) => {
   document.querySelector("#stats-overlay").style.display = 'none';
 });
+
+document.querySelector("#open-stats-btn").addEventListener('click', (event) => {
+  document.querySelector("#stats-overlay").style.display = 'block';
+});
+
+document.querySelector("#close-help-modal").addEventListener('click', (event) => {
+  document.querySelector("#help-overlay").style.display = 'none';
+});
+
+document.querySelector("#open-help-btn").addEventListener('click', (event) => {
+  document.querySelector("#help-overlay").style.display = 'block';
+});

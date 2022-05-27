@@ -152,9 +152,13 @@ export default class Game {
   endGame() {
     let self = this;
     this.updateStats();
-    this.lcldb.setItem(self.statuskey, "COMPLETE");   
+    this.lcldb.setItem(this.statuskey, "COMPLETE");   
     this.game_status = "COMPLETE";
-    this.showStatsOverlay();
+
+    setTimeout(() => {
+      self.showStatsOverlay();
+    }, "1500")
+    
   }
 
   showStatsOverlay() {
