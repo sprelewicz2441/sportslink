@@ -1,1 +1,303 @@
-function _0x5120(_0x1d212,_0x2665f8){const _0x43f4f3=_0x43f4();return _0x5120=function(_0x51200d,_0x2b2051){_0x51200d=_0x51200d-0x1c2;let _0x3bbfae=_0x43f4f3[_0x51200d];return _0x3bbfae;},_0x5120(_0x1d212,_0x2665f8);}function _0x43f4(){const _0x51f622=['style','querySelector','games_won','showHint','wordOfDay','#guess-brkdwn-2','#help-overlay','endGame','DEL','#game-board','addEventListener','round','[data-letter=\x22','allGuesses','nope-letter','game_status','#max_streak','handleKeyPress','fail','setupGameboard','lcldb','#game-keyboard','showHelpOverlay','currentGuess','correct-letter','#current_streak','length','querySelectorAll','#stats-overlay','toUpperCase','log','game_hint','deleteChar','checkWord','1846425JDfuQe','contains-letter','includes','LOST','unwindActiveGame','#win-percentage','2Aenwqe','game_matix','buffastamp','nope-key-letter','Buffale','current_streak','letterAnimation','current_col','remove','#guess-brkdwn-1','buffastats','#hint-btn','WIN','init','getAttribute','73008GjchNG','Sabres','stateandstats','key-default','buffastatus','467602dvrsmm','block','statuskey','correct-key-letter','stampkey','forEach','COMPLETE','getItem','4433572QrtlJn','from_cache','max_streak','flashAlertNotice','innerHTML','UPDATING\x20STATS','1126548SJkLId','classList','statskey','power','none','populateStatsOverlay','%\x20Wins','updateStats','#modal-messages','current_row','1530771pFrtgL','buffastate','532dnsMhJ','alert_box','games_played','showStatsOverlay','Not\x20enough\x20letters','ACTIVE','push','data-letter','letter-border','guess_dist','setItem','.word-row','#guess-brkdwn-3','15978033sLCpkg','#guess-brkdwn-4','statekey','setupKeyboard','#alerts','display','add','#messages'];_0x43f4=function(){return _0x51f622;};return _0x43f4();}const _0xdf3d7=_0x5120;(function(_0x282db0,_0x2a0f50){const _0x4834a7=_0x5120,_0x218083=_0x282db0();while(!![]){try{const _0x450ccf=parseInt(_0x4834a7(0x1e3))/0x1+parseInt(_0x4834a7(0x1cf))/0x2*(-parseInt(_0x4834a7(0x1fb))/0x3)+-parseInt(_0x4834a7(0x1eb))/0x4+-parseInt(_0x4834a7(0x1c9))/0x5+-parseInt(_0x4834a7(0x1f1))/0x6+-parseInt(_0x4834a7(0x1fd))/0x7*(-parseInt(_0x4834a7(0x1de))/0x8)+parseInt(_0x4834a7(0x20a))/0x9;if(_0x450ccf===_0x2a0f50)break;else _0x218083['push'](_0x218083['shift']());}catch(_0x596f1b){_0x218083['push'](_0x218083['shift']());}}}(_0x43f4,0xb9bf6));export default class Game{constructor(){const _0x36065e=_0x5120,_0x47f2e2=document[_0x36065e(0x213)](_0x36065e(0x227));this[_0x36065e(0x20d)](_0x47f2e2),this['game_matix']=this[_0x36065e(0x225)](document[_0x36065e(0x213)](_0x36065e(0x21b))),this[_0x36065e(0x1fa)]=0x0,this[_0x36065e(0x1d6)]=0x0,this[_0x36065e(0x229)]='',this[_0x36065e(0x221)]='',this[_0x36065e(0x21f)]=[],this[_0x36065e(0x216)]=_0x36065e(0x1f4),this[_0x36065e(0x1c6)]=_0x36065e(0x1df),this[_0x36065e(0x1fe)]=document[_0x36065e(0x213)](_0x36065e(0x20e)),this[_0x36065e(0x226)]=localforage['createInstance']({'name':_0x36065e(0x1d3),'storeName':_0x36065e(0x1e0)});;this['statekey']=_0x36065e(0x1fc),this[_0x36065e(0x1e5)]=_0x36065e(0x1e2),this['statskey']=_0x36065e(0x1d9),this[_0x36065e(0x1e7)]=_0x36065e(0x1d1),this['from_cache_complete']=![];let _0xe219e3=0x14,_0x2711c1=this;_0x2711c1[_0x36065e(0x226)]['getItem'](_0x2711c1[_0x36065e(0x1e7)],function(_0x503597,_0x3bbf94){const _0x310290=_0x36065e;_0xe219e3==_0x3bbf94?_0x2711c1[_0x310290(0x226)][_0x310290(0x1ea)](_0x2711c1[_0x310290(0x1e5)],function(_0x49fc35,_0x3c8125){const _0x3fecff=_0x310290;_0x2711c1['game_status']=_0x3c8125,_0x2711c1[_0x3fecff(0x1ec)]=!![],(_0x3c8125==_0x3fecff(0x202)||_0x3c8125==_0x3fecff(0x1e9))&&(_0x3c8125==_0x3fecff(0x1e9)&&(_0x2711c1['from_cache_complete']=!![]),_0x2711c1[_0x3fecff(0x1cd)]());}):(_0x2711c1[_0x310290(0x226)][_0x310290(0x207)](_0x2711c1['stampkey'],_0xe219e3),_0x2711c1[_0x310290(0x226)][_0x310290(0x207)](_0x2711c1['statekey'],[]),_0x2711c1[_0x310290(0x221)]=_0x310290(0x202),_0x2711c1[_0x310290(0x226)][_0x310290(0x207)](_0x2711c1[_0x310290(0x1e5)],_0x310290(0x202)));}),this[_0x36065e(0x1dc)]();}[_0xdf3d7(0x1dc)](){const _0x31781f=_0xdf3d7,_0xbb7488=this;this[_0x31781f(0x226)]['getItem'](_0xbb7488[_0x31781f(0x1f3)],function(_0x44753b,_0x3d34a2){const _0x549c0d=_0x31781f;!_0x3d34a2&&(_0x3d34a2={}),_0xbb7488[_0x549c0d(0x1ff)]=_0x3d34a2[_0x549c0d(0x1ff)]||0x0,_0xbb7488[_0x549c0d(0x214)]=_0x3d34a2[_0x549c0d(0x214)]||0x0,_0xbb7488['current_streak']=_0x3d34a2['current_streak']||0x0,_0xbb7488[_0x549c0d(0x1ed)]=_0x3d34a2[_0x549c0d(0x1ed)]||0x0,_0xbb7488[_0x549c0d(0x206)]=_0x3d34a2[_0x549c0d(0x206)]||[],_0xbb7488[_0x549c0d(0x1f6)](),_0xbb7488['games_played']==0x0&&_0xbb7488[_0x549c0d(0x228)]();});}[_0xdf3d7(0x1cd)](){const _0x27928a=_0xdf3d7;self=this,this[_0x27928a(0x226)][_0x27928a(0x1ea)](this[_0x27928a(0x20c)],function(_0x3392eb,_0x4089d3){const _0x136751=_0x27928a;if(_0x4089d3[_0x136751(0x22c)]>0x0)for(var _0x1be300=0x0;_0x1be300<_0x4089d3['length'];_0x1be300++){[..._0x4089d3[_0x1be300]][_0x136751(0x1e8)](_0x2e1267=>self[_0x136751(0x223)](_0x2e1267)),self[_0x136751(0x1c8)]();}});}[_0xdf3d7(0x223)](_0x363691){const _0x23072a=_0xdf3d7;if(_0x363691=='ENT'){this['checkWord']();return;}if(_0x363691==_0x23072a(0x21a)){this['deleteChar']();return;}this[_0x23072a(0x1d0)][this[_0x23072a(0x1fa)]][_0x23072a(0x22c)]>=this['current_col']+0x1&&(this[_0x23072a(0x1d0)][this[_0x23072a(0x1fa)]][this[_0x23072a(0x1d6)]][_0x23072a(0x1ef)]=_0x363691,this[_0x23072a(0x1d0)][this[_0x23072a(0x1fa)]][this[_0x23072a(0x1d6)]]['classList']['add'](_0x23072a(0x205)),this['current_col']++);}[_0xdf3d7(0x1c7)](){const _0x735ce0=_0xdf3d7;this['current_col']>0x0&&(this[_0x735ce0(0x1d6)]--,this[_0x735ce0(0x1d0)][this[_0x735ce0(0x1fa)]][this['current_col']][_0x735ce0(0x1f2)][_0x735ce0(0x1d7)](_0x735ce0(0x205)),this[_0x735ce0(0x1d0)][this['current_row']][this[_0x735ce0(0x1d6)]][_0x735ce0(0x1ef)]='');}[_0xdf3d7(0x1ee)](_0x20ebde){const _0x5db3bc=_0xdf3d7;this[_0x5db3bc(0x1fe)][_0x5db3bc(0x1ef)]=_0x20ebde,this[_0x5db3bc(0x1fe)][_0x5db3bc(0x212)][_0x5db3bc(0x20f)]=_0x5db3bc(0x1e4),setTimeout(()=>{const _0x5b73d4=_0x5db3bc;this[_0x5b73d4(0x1fe)][_0x5b73d4(0x212)][_0x5b73d4(0x20f)]=_0x5b73d4(0x1f5);},'1500');}['showHint'](){const _0x3ba0d7=_0xdf3d7,_0x11e631=document[_0x3ba0d7(0x213)](_0x3ba0d7(0x1da));_0x11e631[_0x3ba0d7(0x212)][_0x3ba0d7(0x20f)]='block';let _0x1812bd=this;_0x11e631[_0x3ba0d7(0x21c)]('click',function(_0x459d9c){const _0x383c1e=_0x3ba0d7;_0x1812bd[_0x383c1e(0x1ee)](_0x1812bd[_0x383c1e(0x1c6)]);});}[_0xdf3d7(0x1c8)](){const _0xbb7532=_0xdf3d7,_0x38041f=this[_0xbb7532(0x1d0)][this[_0xbb7532(0x1fa)]];if(this[_0xbb7532(0x1d6)]<0x5){this[_0xbb7532(0x1ee)](_0xbb7532(0x201));return;}let _0x3dd12e=0x0;this[_0xbb7532(0x229)]='';for(var _0x2b5990=0x0;_0x2b5990<_0x38041f['length'];_0x2b5990++){const _0x313c25=document['querySelector'](_0xbb7532(0x21e)+_0x38041f[_0x2b5990][_0xbb7532(0x1ef)]+'\x22]');this['currentGuess']+=_0x38041f[_0x2b5990][_0xbb7532(0x1ef)],_0x38041f[_0x2b5990][_0xbb7532(0x1f2)][_0xbb7532(0x1d7)](_0xbb7532(0x205));if(_0x38041f[_0x2b5990][_0xbb7532(0x1ef)]==this['wordOfDay'][_0x2b5990])_0x313c25[_0xbb7532(0x1f2)][_0xbb7532(0x1d7)]('key-default'),_0x313c25[_0xbb7532(0x1f2)]['add'](_0xbb7532(0x1e6)),_0x38041f[_0x2b5990][_0xbb7532(0x1f2)][_0xbb7532(0x210)](_0xbb7532(0x22a)),_0x38041f[_0x2b5990]['classList'][_0xbb7532(0x210)](_0xbb7532(0x1d5)),_0x3dd12e++;else this[_0xbb7532(0x216)][_0xbb7532(0x1cb)](_0x38041f[_0x2b5990]['innerHTML'])?(_0x313c25['classList'][_0xbb7532(0x1d7)]('key-default'),_0x313c25[_0xbb7532(0x1f2)][_0xbb7532(0x210)](_0xbb7532(0x1ca)),_0x38041f[_0x2b5990][_0xbb7532(0x1f2)]['add'](_0xbb7532(0x1ca))):(_0x313c25[_0xbb7532(0x1f2)]['remove'](_0xbb7532(0x1e1)),_0x313c25[_0xbb7532(0x1f2)][_0xbb7532(0x210)](_0xbb7532(0x1d2)),_0x38041f[_0x2b5990][_0xbb7532(0x1f2)][_0xbb7532(0x210)](_0xbb7532(0x220)));}this[_0xbb7532(0x1fa)]++,this['current_col']=0x0,this[_0xbb7532(0x21f)][_0xbb7532(0x203)](this['currentGuess']),this['lcldb'][_0xbb7532(0x207)](this[_0xbb7532(0x20c)],this['allGuesses']),_0x3dd12e==0x5?(document[_0xbb7532(0x213)](_0xbb7532(0x211))['innerHTML']='',document[_0xbb7532(0x213)]('#game-keyboard')['style'][_0xbb7532(0x20f)]=_0xbb7532(0x1f5),this[_0xbb7532(0x221)]!=_0xbb7532(0x1e9)&&(this[_0xbb7532(0x221)]=_0xbb7532(0x1db)),this[_0xbb7532(0x219)]()):this[_0xbb7532(0x221)]=_0xbb7532(0x202),this[_0xbb7532(0x1fa)]>=0x3&&this[_0xbb7532(0x215)](),this['current_row']>=0x5&&_0x3dd12e!=0x5&&(this[_0xbb7532(0x221)]!=_0xbb7532(0x1e9)&&(this[_0xbb7532(0x221)]=_0xbb7532(0x1cc)),this['lcldb'][_0xbb7532(0x207)](this[_0xbb7532(0x1e5)],this[_0xbb7532(0x221)]),this[_0xbb7532(0x219)](),document[_0xbb7532(0x213)]('#messages')[_0xbb7532(0x1ef)]=this[_0xbb7532(0x216)][_0xbb7532(0x1c4)](),document['querySelector'](_0xbb7532(0x227))[_0xbb7532(0x212)][_0xbb7532(0x20f)]='none'),this[_0xbb7532(0x226)][_0xbb7532(0x207)](this[_0xbb7532(0x1e5)],this[_0xbb7532(0x221)]);}[_0xdf3d7(0x219)](){const _0x514684=_0xdf3d7;!this['from_cache_complete']&&this[_0x514684(0x1f8)]();this[_0x514684(0x1f6)](),this[_0x514684(0x226)][_0x514684(0x207)](this[_0x514684(0x1e5)],_0x514684(0x1e9)),this[_0x514684(0x221)]=_0x514684(0x1e9);let _0x1332be=this;setTimeout(()=>{const _0x3cffc3=_0x514684;_0x1332be[_0x3cffc3(0x200)]();},'1000');}[_0xdf3d7(0x228)](){const _0x2c6fea=_0xdf3d7,_0x5ce37e=document[_0x2c6fea(0x213)](_0x2c6fea(0x218));_0x5ce37e[_0x2c6fea(0x212)][_0x2c6fea(0x20f)]='block';}['showStatsOverlay'](){const _0x2a6567=_0xdf3d7,_0x430fe9=document[_0x2a6567(0x213)](_0x2a6567(0x1c3));_0x430fe9[_0x2a6567(0x212)][_0x2a6567(0x20f)]='block';}[_0xdf3d7(0x1f6)](){const _0x36dc15=_0xdf3d7,_0x4be46f=document[_0x36dc15(0x213)](_0x36dc15(0x1c3));(this[_0x36dc15(0x221)]=='COMPLETE'||this[_0x36dc15(0x221)]==_0x36dc15(0x1cc))&&(document['querySelector'](_0x36dc15(0x1f9))[_0x36dc15(0x1ef)]=this[_0x36dc15(0x216)]),this[_0x36dc15(0x1ff)]>0x0&&(document[_0x36dc15(0x213)](_0x36dc15(0x1ce))['innerHTML']=Math[_0x36dc15(0x21d)](this[_0x36dc15(0x214)]/this['games_played']*0x64)+_0x36dc15(0x1f7)),document['querySelector']('#games_played')[_0x36dc15(0x1ef)]=this[_0x36dc15(0x1ff)],document[_0x36dc15(0x213)]('#games_won')[_0x36dc15(0x1ef)]=this[_0x36dc15(0x214)],document[_0x36dc15(0x213)](_0x36dc15(0x22b))['innerHTML']=this[_0x36dc15(0x1d4)],document[_0x36dc15(0x213)](_0x36dc15(0x222))[_0x36dc15(0x1ef)]=this[_0x36dc15(0x1ed)],document[_0x36dc15(0x213)](_0x36dc15(0x1d8))[_0x36dc15(0x1ef)]=this[_0x36dc15(0x206)][0x1]||0x0,document[_0x36dc15(0x213)](_0x36dc15(0x217))[_0x36dc15(0x1ef)]=this[_0x36dc15(0x206)][0x2]||0x0,document[_0x36dc15(0x213)](_0x36dc15(0x209))[_0x36dc15(0x1ef)]=this[_0x36dc15(0x206)][0x3]||0x0,document[_0x36dc15(0x213)](_0x36dc15(0x20b))['innerHTML']=this['guess_dist'][0x4]||0x0,document[_0x36dc15(0x213)]('#guess-brkdwn-5')['innerHTML']=this['guess_dist'][0x5]||0x0,document[_0x36dc15(0x213)]('#guess-brkdwn-fail')[_0x36dc15(0x1ef)]=this[_0x36dc15(0x206)][_0x36dc15(0x224)]||0x0;}['updateStats'](){const _0xdb6001=_0xdf3d7;console[_0xdb6001(0x1c5)](this[_0xdb6001(0x221)]);if(this[_0xdb6001(0x221)]=='COMPLETE')return;console[_0xdb6001(0x1c5)](_0xdb6001(0x1f0));const _0x384f50={};this[_0xdb6001(0x221)]==_0xdb6001(0x1db)?(this['games_won']+=0x1,this[_0xdb6001(0x1d4)]+=0x1,_0x384f50['current_streak']=this[_0xdb6001(0x1d4)],this['current_streak']>this[_0xdb6001(0x1ed)]&&(this[_0xdb6001(0x1ed)]=this[_0xdb6001(0x1d4)]),this[_0xdb6001(0x206)][this[_0xdb6001(0x1fa)]]?this[_0xdb6001(0x206)][this['current_row']]+=0x1:this['guess_dist'][this[_0xdb6001(0x1fa)]]=0x1):(this['guess_dist']['fail']?this[_0xdb6001(0x206)]['fail']+=0x1:this[_0xdb6001(0x206)][_0xdb6001(0x224)]=0x1,_0x384f50['current_streak']=0x0,this['current_streak']=0x0),_0x384f50['games_won']=this[_0xdb6001(0x214)],_0x384f50[_0xdb6001(0x1ed)]=this['max_streak'],_0x384f50[_0xdb6001(0x206)]=this[_0xdb6001(0x206)],this['games_played']+=0x1,_0x384f50['games_played']=this[_0xdb6001(0x1ff)],this[_0xdb6001(0x226)][_0xdb6001(0x207)](this[_0xdb6001(0x1f3)],_0x384f50);}[_0xdf3d7(0x225)](_0x47d359){const _0x212142=_0xdf3d7,_0xd3513e=[],_0x8415f3=_0x47d359[_0x212142(0x1c2)](_0x212142(0x208));return _0x8415f3[_0x212142(0x1e8)](_0x2eef70=>{const _0x2bdc78=_0x212142;let _0x2c81c8=[];_0x2eef70[_0x2bdc78(0x1c2)]('.game-tile')[_0x2bdc78(0x1e8)](_0x2feaf9=>{const _0xb0c6bd=_0x2bdc78;_0x2c81c8[_0xb0c6bd(0x203)](_0x2feaf9);}),_0xd3513e[_0x2bdc78(0x203)](_0x2c81c8);}),_0xd3513e;}[_0xdf3d7(0x20d)](_0x57e0cb){const _0x2995e7=_0xdf3d7,_0xb436bb=_0x57e0cb[_0x2995e7(0x1c2)]('button'),_0x44281b=this;_0xb436bb['forEach'](function(_0x3226a1,_0x129068){_0x3226a1['addEventListener']('click',_0x2dc9a6=>{const _0x26eb64=_0x5120;_0x44281b[_0x26eb64(0x223)](_0x2dc9a6['target'][_0x26eb64(0x1dd)](_0x26eb64(0x204)));});});}}
+
+export default class Game {
+  constructor() {
+    const keyboard_wrapper = document.querySelector("#game-keyboard");
+    this.setupKeyboard(keyboard_wrapper);
+    this.game_matix = this.setupGameboard(document.querySelector("#game-board"));
+    this.current_row = 0;
+    this.current_col = 0;
+    this.currentGuess = '';
+    this.game_status = '';
+    this.allGuesses = [];
+    this.wordOfDay = "power";
+    this.game_hint = "Sabres";
+    this.alert_box = document.querySelector("#alerts");
+
+    // Setup cache
+    this.lcldb = localforage.createInstance({
+      name: "Buffale",
+      storeName: "stateandstats"
+    });;
+    // cache keys
+    this.statekey = "buffastate"; //Key for storing game state
+    this.statuskey = "buffastatus";
+    this.statskey = "buffastats";
+    this.stampkey = "buffastamp";
+    this.from_cache_complete = false;  //Flag to see if game was loaded from cache
+
+    let wod_ts = 20;
+
+    let self = this;
+    self.lcldb.getItem(self.stampkey, function(err, stamp) {
+      if(wod_ts == stamp) {
+        self.lcldb.getItem(self.statuskey, function(err, status) {
+          self.game_status = status;
+          self.from_cache = true;
+          if(status == 'ACTIVE' || status == 'COMPLETE') {
+            if(status == "COMPLETE") {
+              self.from_cache_complete = true;
+            }
+            self.unwindActiveGame();
+          }
+        });
+      } else {
+        self.lcldb.setItem(self.stampkey, wod_ts);
+        self.lcldb.setItem(self.statekey, []);
+        self.game_status = "ACTIVE";
+        self.lcldb.setItem(self.statuskey, "ACTIVE");
+      }
+    });
+
+    this.init();
+  }
+
+  init() {
+    const self = this;
+    this.lcldb.getItem(self.statskey, function(err, obj) {
+      if(!obj) {
+        obj = {};
+      }
+      self.games_played = obj.games_played || 0;
+      self.games_won = obj.games_won || 0;
+      self.current_streak = obj.current_streak || 0;
+      self.max_streak = obj.max_streak || 0;
+      self.guess_dist = obj.guess_dist || [];
+      self.populateStatsOverlay();
+      if(self.games_played == 0) {
+        self.showHelpOverlay();
+      }
+    });
+  }
+
+  unwindActiveGame() {
+    self = this;
+    this.lcldb.getItem(this.statekey, function(err, words) {
+      if(words.length > 0) {
+        for (var i = 0; i < words.length; i++) {
+          [...words[i]].forEach(l => self.handleKeyPress(l))
+          self.checkWord();
+        }
+      }
+    });
+  }
+
+  handleKeyPress(letter) {
+    if(letter == "ENT") {
+      this.checkWord();
+      return;
+    }
+
+    if(letter == "DEL") {
+      this.deleteChar();
+      return;
+    }
+    
+    if(this.game_matix[this.current_row].length >= this.current_col+1) {
+      this.game_matix[this.current_row][this.current_col].innerHTML = letter;
+      this.game_matix[this.current_row][this.current_col].classList.add("letter-border");
+      this.current_col++;
+    }
+  }
+
+  deleteChar() {
+    if(this.current_col > 0) {
+      this.current_col--;
+      this.game_matix[this.current_row][this.current_col].classList.remove("letter-border");
+      this.game_matix[this.current_row][this.current_col].innerHTML = '';
+    }
+  }
+
+  flashAlertNotice(alert) {
+    this.alert_box.innerHTML = alert;
+    this.alert_box.style.display = "block";
+    setTimeout(() => {
+      this.alert_box.style.display = "none";
+    }, "1500")
+  }
+
+  showHint() {
+    const hint_btn = document.querySelector("#hint-btn");
+    hint_btn.style.display = "block";
+    let self = this;
+    hint_btn.addEventListener("click", function(e) {
+      self.flashAlertNotice(self.game_hint);
+    });
+  }
+
+  checkWord() {
+    const rowTiles = this.game_matix[this.current_row];
+
+    if(this.current_col < 5) {
+      this.flashAlertNotice("Not enough letters");
+      return;
+    }
+    let lettersRight = 0;
+    this.currentGuess = '';
+    for (var i = 0; i < rowTiles.length; i++) {
+      const keyboardLetter = document.querySelector('[data-letter="' + rowTiles[i].innerHTML + '"]');
+      this.currentGuess += rowTiles[i].innerHTML;
+      rowTiles[i].classList.remove("letter-border");
+      if(rowTiles[i].innerHTML == this.wordOfDay[i]) {
+        keyboardLetter.classList.remove("key-default");
+        keyboardLetter.classList.add("correct-key-letter");
+        rowTiles[i].classList.add("correct-letter");
+        rowTiles[i].classList.add("letterAnimation")
+        lettersRight++;
+      } else if (this.wordOfDay.includes(rowTiles[i].innerHTML)) {
+        keyboardLetter.classList.remove("key-default");
+        keyboardLetter.classList.add("contains-letter");
+        rowTiles[i].classList.add("contains-letter");
+      } else {
+        keyboardLetter.classList.remove("key-default");
+        keyboardLetter.classList.add("nope-key-letter");
+        rowTiles[i].classList.add("nope-letter");
+      }
+    }
+
+    this.current_row++;
+    this.current_col = 0;
+    this.allGuesses.push(this.currentGuess);
+    this.lcldb.setItem(this.statekey, this.allGuesses);
+    if(lettersRight == 5) {
+      document.querySelector("#messages").innerHTML = "";
+      document.querySelector("#game-keyboard").style.display = "none";
+      if(this.game_status != "COMPLETE") {
+        this.game_status = "WIN";
+      }
+      this.endGame();
+    } else {
+      this.game_status = "ACTIVE";
+    }
+
+    if(this.current_row >= 3) {
+      this.showHint();
+    }
+
+    if(this.current_row >= 5 && lettersRight != 5) {
+      if(this.game_status != "COMPLETE") {
+        this.game_status = "LOST";
+      }
+      this.lcldb.setItem(this.statuskey, this.game_status);
+      this.endGame();
+      document.querySelector("#messages").innerHTML = this.wordOfDay.toUpperCase();
+      document.querySelector("#game-keyboard").style.display = "none";
+    }
+
+    this.lcldb.setItem(this.statuskey, this.game_status);
+  }
+
+  endGame() {
+    if(!this.from_cache_complete) {
+      this.updateStats();
+    }
+    this.populateStatsOverlay();
+    this.lcldb.setItem(this.statuskey, "COMPLETE");   
+    this.game_status = "COMPLETE";
+
+    let self = this;
+    setTimeout(() => {
+      self.showStatsOverlay();
+    }, "1000")
+    
+  }
+
+  showHelpOverlay() {
+    const overlay = document.querySelector("#help-overlay");
+    overlay.style.display = "block";
+  }
+
+  showStatsOverlay() {
+    const overlay = document.querySelector("#stats-overlay");
+    overlay.style.display = "block";
+  }
+
+  populateStatsOverlay() {
+    const overlay = document.querySelector("#stats-overlay");
+    if(this.game_status == "COMPLETE" || this.game_status == "LOST") {
+      document.querySelector("#modal-messages").innerHTML = this.wordOfDay;
+    }
+    if(this.games_played > 0) {
+      document.querySelector("#win-percentage").innerHTML = Math.round((this.games_won/this.games_played)*100) + '% Wins';
+    }
+    document.querySelector("#games_played").innerHTML = this.games_played;
+    document.querySelector("#games_won").innerHTML = this.games_won;
+    document.querySelector("#current_streak").innerHTML = this.current_streak;
+    document.querySelector("#max_streak").innerHTML = this.max_streak;
+    document.querySelector("#guess-brkdwn-1").innerHTML = this.guess_dist[1] || 0;
+    document.querySelector("#guess-brkdwn-2").innerHTML = this.guess_dist[2] || 0;
+    document.querySelector("#guess-brkdwn-3").innerHTML = this.guess_dist[3] || 0;
+    document.querySelector("#guess-brkdwn-4").innerHTML = this.guess_dist[4] || 0;
+    document.querySelector("#guess-brkdwn-5").innerHTML = this.guess_dist[5] || 0;
+    document.querySelector("#guess-brkdwn-fail").innerHTML = this.guess_dist['fail'] || 0;
+  }
+
+  updateStats() {
+    console.log(this.game_status);
+    if (this.game_status == "COMPLETE") {
+      return;
+    }
+    
+    console.log("UPDATING STATS");
+    const obj = {};
+
+    if(this.game_status == "WIN") {
+      this.games_won += 1;
+     
+
+      this.current_streak += 1;
+      obj.current_streak = this.current_streak;
+
+      if (this.current_streak > this.max_streak) {
+        this.max_streak = this.current_streak;
+      }
+
+      if(this.guess_dist[this.current_row]) {
+        this.guess_dist[this.current_row] += 1;
+      } else {
+        this.guess_dist[this.current_row] = 1;
+      }
+    } else {
+      if(this.guess_dist['fail']) {
+        this.guess_dist['fail'] += 1;
+      } else {
+        this.guess_dist['fail'] = 1;
+      }
+
+      obj.current_streak = 0;
+      this.current_streak = 0;
+    }
+
+    obj.games_won = this.games_won;
+    obj.max_streak = this.max_streak;
+
+    obj.guess_dist = this.guess_dist;
+    this.games_played += 1;
+    obj.games_played = this.games_played;
+
+    this.lcldb.setItem(this.statskey, obj);
+  }
+
+  setupGameboard(board) {
+    const matrix = [];
+    const gb_rows = board.querySelectorAll(".word-row");
+    gb_rows.forEach((e) => {
+      let current_row = [];
+      e.querySelectorAll(".game-tile").forEach((gt) => {
+        current_row.push(gt);
+      });
+      matrix.push(current_row);
+    });
+    return matrix;
+  }
+
+  setupKeyboard(keyboard) {
+    const v_keys = keyboard.querySelectorAll('button');
+    const self = this;
+
+    v_keys.forEach(function (button, index) {
+      button.addEventListener('click', (event) => {
+        self.handleKeyPress(event.target.getAttribute('data-letter'));
+      });  
+    });
+  }
+}
