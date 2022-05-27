@@ -27,6 +27,8 @@ h3 {
   font-size: large;
 }
 #messages {
+  padding-top: 10px;
+  font-size: large;
   color: red;
 }
 #game-board {
@@ -83,7 +85,7 @@ h3 {
   flex: 1 1 0px;
   border: 1px solid grey;
   margin: 1px;
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 700;
   height: 2rem;
   width: 2rem;
@@ -140,6 +142,13 @@ h3 {
   max-width:  500px;
   min-height: 400px;
   max-height: 500px;
+}
+
+.modal-messages {
+  font-size: large;
+  color: red;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 .footballred {
@@ -221,8 +230,8 @@ h3 {
   border:  1px solid black;
   width:  70vw;
   max-width: 400px;
-  height: 80vh;
-  max-height: 450px;
+  height: 75vh;
+  max-height: 500px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -249,6 +258,33 @@ h3 {
 .medium-message {
   padding-top: 20px;
   font-size: large;
+}
+
+.alert-wrapper {
+  width:  250px;
+  height: 30px;
+  padding-top: 10px;
+  font-size: large;
+  font-weight: 700;
+  background-color: #00338D;
+  color: white;
+  border-radius: 15px;
+  position: absolute;
+  z-index: 999;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.small-button {
+  background-color: #00338D;
+  color:  white;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 5px;
+  min-width:  50px;
+  min-height:  25px;
+  max-height:  25px;
 }
 
 @-webkit-keyframes letterAnimation {

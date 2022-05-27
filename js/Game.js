@@ -9,7 +9,9 @@ export default class Game {
     this.currentGuess = '';
     this.game_status = '';
     this.allGuesses = [];
-    this.wordOfDay = "tyrod";
+    this.wordOfDay = "power";
+    this.game_hint = "Sabres";
+    this.alert_box = document.querySelector("#alerts");
 
     // Setup cache
     this.lcldb = localforage.createInstance({
@@ -21,24 +23,31 @@ export default class Game {
     this.statuskey = "buffastatus";
     this.statskey = "buffastats";
     this.stampkey = "buffastamp";
+    this.from_cache_complete = false;  //Flag to see if game was loaded from cache
 
-    let wod_ts = 13;
+    let wod_ts = 20;
 
     let self = this;
     self.lcldb.getItem(self.stampkey, function(err, stamp) {
       if(wod_ts == stamp) {
         self.lcldb.getItem(self.statuskey, function(err, status) {
           self.game_status = status;
+          self.from_cache = true;
           if(status == 'ACTIVE' || status == 'COMPLETE') {
+            if(status == "COMPLETE") {
+              self.from_cache_complete = true;
+            }
             self.unwindActiveGame();
           }
         });
       } else {
         self.lcldb.setItem(self.stampkey, wod_ts);
+        self.lcldb.setItem(self.statekey, []);
         self.game_status = "ACTIVE";
         self.lcldb.setItem(self.statuskey, "ACTIVE");
       }
     });
+
     this.init();
   }
 
@@ -53,7 +62,12 @@ export default class Game {
       self.current_streak = obj.current_streak || 0;
       self.max_streak = obj.max_streak || 0;
       self.guess_dist = obj.guess_dist || [];
+      self.populateStatsOverlay();
     });
+
+    if(this.games_played == 0 || !this.games_played) {
+      this.showHelpOverlay();
+    }
   }
 
   unwindActiveGame() {
@@ -94,10 +108,30 @@ export default class Game {
     }
   }
 
+  flashAlertNotice(alert) {
+    this.alert_box.innerHTML = alert;
+    this.alert_box.style.display = "block";
+    setTimeout(() => {
+      this.alert_box.style.display = "none";
+    }, "1500")
+  }
+
+  showHint() {
+    const hint_btn = document.querySelector("#hint-btn");
+    hint_btn.style.display = "block";
+    let self = this;
+    hint_btn.addEventListener("click", function(e) {
+      self.flashAlertNotice(self.game_hint);
+    });
+  }
+
   checkWord() {
     const rowTiles = this.game_matix[this.current_row];
 
-    if(this.current_col < 5) {return;}
+    if(this.current_col < 5) {
+      this.flashAlertNotice("Not enough letters");
+      return;
+    }
     let lettersRight = 0;
     this.currentGuess = '';
     for (var i = 0; i < rowTiles.length; i++) {
@@ -126,7 +160,7 @@ export default class Game {
     this.allGuesses.push(this.currentGuess);
     this.lcldb.setItem(this.statekey, this.allGuesses);
     if(lettersRight == 5) {
-      document.querySelector("#messages").innerHTML = "YOU WIN!";
+      document.querySelector("#messages").innerHTML = "";
       document.querySelector("#game-keyboard").style.display = "none";
       if(this.game_status != "COMPLETE") {
         this.game_status = "WIN";
@@ -134,6 +168,10 @@ export default class Game {
       this.endGame();
     } else {
       this.game_status = "ACTIVE";
+    }
+
+    if(this.current_row >= 3) {
+      this.showHint();
     }
 
     if(this.current_row >= 5 && lettersRight != 5) {
@@ -150,7 +188,10 @@ export default class Game {
   }
 
   endGame() {
-    this.updateStats();
+    if(!this.from_cache_complete) {
+      this.updateStats();
+    }
+    this.populateStatsOverlay();
     this.lcldb.setItem(this.statuskey, "COMPLETE");   
     this.game_status = "COMPLETE";
 
@@ -161,10 +202,22 @@ export default class Game {
     
   }
 
+  showHelpOverlay() {
+    const overlay = document.querySelector("#help-overlay");
+    overlay.style.display = "block";
+  }
+
   showStatsOverlay() {
     const overlay = document.querySelector("#stats-overlay");
     overlay.style.display = "block";
-    document.querySelector("#win-percentage").innerHTML = Math.round(this.games_won/this.games_played)*100 + '% Wins';
+  }
+
+  populateStatsOverlay() {
+    const overlay = document.querySelector("#stats-overlay");
+    if(this.game_status == "COMPLETE" || this.game_status == "LOST") {
+      document.querySelector("#modal-messages").innerHTML = this.wordOfDay;
+    }
+    document.querySelector("#win-percentage").innerHTML = Math.round((this.games_won/this.games_played)*100) || 0 + '% Wins';
     document.querySelector("#games_played").innerHTML = this.games_played;
     document.querySelector("#games_won").innerHTML = this.games_won;
     document.querySelector("#current_streak").innerHTML = this.current_streak;
@@ -178,23 +231,23 @@ export default class Game {
   }
 
   updateStats() {
+    console.log(this.game_status);
     if (this.game_status == "COMPLETE") {
       return;
     }
     
+    console.log("UPDATING STATS");
     const obj = {};
 
     if(this.game_status == "WIN") {
       this.games_won += 1;
-      obj.games_won = this.games_won;
+     
 
       this.current_streak += 1;
       obj.current_streak = this.current_streak;
 
       if (this.current_streak > this.max_streak) {
         this.max_streak = this.current_streak;
-        obj.max_streak = this.max_streak;
-        
       }
 
       if(this.guess_dist[this.current_row]) {
@@ -212,6 +265,9 @@ export default class Game {
       obj.current_streak = 0;
       this.current_streak = 0;
     }
+
+    obj.games_won = this.games_won;
+    obj.max_streak = this.max_streak;
 
     obj.guess_dist = this.guess_dist;
     this.games_played += 1;

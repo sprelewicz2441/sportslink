@@ -21,7 +21,9 @@
   <div id="game-wrapper" class="centered">
     <header id="game-header centered">
         <div id="messages"> </div>
+        <div id="hint-btn" hidden><button class="small-button">Hint</button></div>
     </header>
+    <div id="alerts" class="alert-wrapper" hidden></div>
     <div id="game-board" class="centered">
       <div id="first-row" class="word-row centered">
         <div class="game-tile"></div>
@@ -65,10 +67,14 @@
       <p>Buffale works like other tile games you have played.</p>
       <p>All clues are currently related to Buffalo sports teams: past and present/pro or college.</p>
       <p>You have 5 guesses to solve today's answer. Letters will change colors based on their position in the answer.</p> 
+      <p><strong>After 3 incorrect guesses you will see a button to give yourself a small hint if you choose.</strong></p>
     </div>
 
     <div id="stats-overlay" class="overlay left-aligned" hidden>
       <header class="close-button"><span id="close-stats-modal"><strong>X</strong></span></header>
+      <header id="game-header-modal centered">
+        <div id="modal-messages" class="centered modal-messages"> </div>
+      </header>
       <div id="win-percentage" class="large-message centered footballbluetext"></div>
       <div><strong>Games Played:</strong> <span id="games_played"> </span></div>
       <div><strong>Games Won:</strong> <span id="games_won"> </span></div>
@@ -83,7 +89,7 @@
       <div><strong>5:</strong> <span id="guess-brkdwn-5"> </span></div>
       <div><strong>Fails:</strong> <span id="guess-brkdwn-fail"> </span></div>
 
-      <div class="footballbluetext medium-message">Next Buffale: Friday, May 27 around 5:00 PM EST</div>
+      <div class="footballbluetext medium-message">Next Buffale: Saturdat, May 28 around 5:00 PM EST</div>
     </div> 
 
     <div id="game-keyboard">
