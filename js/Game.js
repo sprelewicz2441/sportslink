@@ -217,7 +217,7 @@ export default class Game {
     if(this.game_status == "COMPLETE" || this.game_status == "LOST") {
       document.querySelector("#modal-messages").innerHTML = this.wordOfDay;
     }
-    document.querySelector("#win-percentage").innerHTML = Math.round((this.games_won/this.games_played)*100) || 0 + '% Wins';
+    document.querySelector("#win-percentage").innerHTML = Math.round((this.games_won/this.games_played)*100) + '% Wins';
     document.querySelector("#games_played").innerHTML = this.games_played;
     document.querySelector("#games_won").innerHTML = this.games_won;
     document.querySelector("#current_streak").innerHTML = this.current_streak;
