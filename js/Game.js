@@ -63,11 +63,10 @@ export default class Game {
       self.max_streak = obj.max_streak || 0;
       self.guess_dist = obj.guess_dist || [];
       self.populateStatsOverlay();
+      if(self.games_played == 0) {
+        this.showHelpOverlay();
+      }
     });
-
-    if(this.games_played == 0 || !this.games_played) {
-      this.showHelpOverlay();
-    }
   }
 
   unwindActiveGame() {
