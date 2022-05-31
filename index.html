@@ -33,6 +33,14 @@
         <div id="hint-btn" hidden><button class="small-button">Hint</button></div>
     </header>
     <div id="alerts" class="alert-wrapper" hidden></div>
+    <div id="help-overlay" class="overlay left-aligned" hidden>
+      <header class="close-button"><span id="close-help-modal"><strong>X</strong></span></header>
+      <p>Hey there, super freak! Thanks for stopping by, you little blue cheese eatin' you</p>
+      <p>It's time to get your Buffalo sports knowledge on. Let's go for it! Here are some of the rules:</p>
+      <p>All solutions are currently related to Buffalo sports teams: past and present/pro or college.</p>
+      <p>You have 5 guesses to solve today's answer. Letters will change colors based on their position in the answer.</p> 
+      <p><strong>After 3 incorrect guesses you will see a button to give yourself a small hint if you choose.</strong></p>
+    </div>
     <div id="game-board" class="centered">
       <div id="first-row" class="word-row centered">
         <div class="game-tile"></div>
@@ -71,15 +79,6 @@
       </div>
     </div>
 
-    <div id="help-overlay" class="overlay left-aligned" hidden>
-      <header class="close-button"><span id="close-help-modal"><strong>X</strong></span></header>
-      <p>Hey there, super freak! Thanks for stopping by, you little blue cheese eatin' you</p>
-      <p>It's time to get your Buffalo sports knowledge on. Let's go for it! Here are some of the rules:</p>
-      <p>All solutions are currently related to Buffalo sports teams: past and present/pro or college.</p>
-      <p>You have 5 guesses to solve today's answer. Letters will change colors based on their position in the answer.</p> 
-      <p><strong>After 3 incorrect guesses you will see a button to give yourself a small hint if you choose.</strong></p>
-    </div>
-
     <div id="stats-overlay" class="overlay left-aligned" hidden>
       <header class="close-button"><span id="close-stats-modal"><strong>X</strong></span></header>
       <header id="game-header-modal centered">
@@ -99,7 +98,7 @@
       <div><strong>5:</strong> <span id="guess-brkdwn-5"> </span></div>
       <div><strong>Fails:</strong> <span id="guess-brkdwn-fail"> </span></div>
 
-      <div class="footballbluetext medium-message"><strong>NEXT BUFFALE: Tuesday, May 31 around 5:00 PM EST</strong></div>
+      <div class="footballbluetext medium-message"><strong>NEXT BUFFALE: Wednesday, June 1 around 5:00 PM EST</strong></div>
     </div> 
 
     <div id="game-keyboard">
@@ -139,6 +138,6 @@
       </div>
   </div>
   <div type="modal" hidden>By Scott Prelewicz, 2022</div>
-  <script type="module" src="js/main.js?v=0.8001"></script>
+  <script type="module" src="js/main.js?v=0.81000"></script>
 </body>
 </html>
