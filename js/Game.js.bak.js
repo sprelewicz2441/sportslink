@@ -9,8 +9,8 @@ export default class Game {
     this.currentGuess = '';
     this.game_status = '';
     this.allGuesses = [];
-    this.wordOfDay = "randy";
-    this.game_hint = "Braves";
+    this.wordOfDay = "biron";
+    this.game_hint = "Sabres";
     this.alert_box = document.querySelector("#alerts");
 
     // Setup cache
@@ -25,7 +25,7 @@ export default class Game {
     this.stampkey = "buffastamp";
     this.from_cache_complete = false;  //Flag to see if game was loaded from cache
 
-    let wod_ts = 40;
+    let wod_ts = 50;
 
     let self = this;
     self.lcldb.getItem(self.stampkey, function(err, stamp) {
