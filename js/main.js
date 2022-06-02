@@ -1,5 +1,5 @@
 'use strict';
-import Game from './Game.js.bak.js';
+import Game from './Game.js';
 
 let game;
 window.addEventListener('DOMContentLoaded', (event) => {
