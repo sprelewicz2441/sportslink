@@ -257,9 +257,22 @@ h3 {
 }
 
 .medium-message {
-  padding-top: 20px;
-  font-size: 20px;
+  font-size: 14px;
   font-weight: 900;
+}
+
+.actions-row {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+.share-btn {
+  border: none;
+  width:  100px;
+  height:  50px;
+  background: #00338D;
+  color: white;
 }
 
 .alert-wrapper {

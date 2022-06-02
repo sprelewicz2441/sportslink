@@ -229,6 +229,10 @@ export default class Game {
     document.querySelector("#guess-brkdwn-4").innerHTML = this.guess_dist[4] || 0;
     document.querySelector("#guess-brkdwn-5").innerHTML = this.guess_dist[5] || 0;
     document.querySelector("#guess-brkdwn-fail").innerHTML = this.guess_dist['fail'] || 0;
+    if(this.game_status == "WIN") {
+      document.querySelector("#copy-btn").style.display = "block";
+      document.querySelector("#copy-content").innerHTML = "I got today's Buffale in " + this.allGuesses.length + " guesses. How is your Buffalo Sports knowledge? Try and beat me! www.buffale.com";
+    }
   }
 
   updateStats() {
