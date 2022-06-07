@@ -9,8 +9,8 @@ export default class Game {
     this.currentGuess = '';
     this.game_status = '';
     this.allGuesses = [];
-    this.wordOfDay = "Bills in the 80s";
-    this.game_hint = "moore";
+    this.wordOfDay = "moore";
+    this.game_hint = "Bills in the 80s";
     this.alert_box = document.querySelector("#alerts");
 
     // Setup cache
