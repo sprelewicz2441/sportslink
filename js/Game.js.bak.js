@@ -25,7 +25,7 @@ export default class Game {
     this.stampkey = "buffastamp";
     this.from_cache_complete = false;  //Flag to see if game was loaded from cache
 
-    let wod_ts = 110;
+    let wod_ts = 120;
 
     let self = this;
     self.lcldb.getItem(self.stampkey, function(err, stamp) {
