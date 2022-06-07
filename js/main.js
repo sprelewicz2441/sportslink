@@ -1,5 +1,5 @@
 'use strict';
-import Game from './Game.js?version=0.0001';
+import Game from './Game.js?version=0.0002';
 
 let game;
 window.addEventListener('DOMContentLoaded', (event) => {
