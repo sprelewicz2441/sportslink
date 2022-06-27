@@ -9,7 +9,7 @@ export default class Game {
     this.currentGuess = '';
     this.game_status = '';
     this.allGuesses = [];
-    this.wordOfDay = "myers";
+    this.wordOfDay = "gerbe";
     this.game_hint = "Former Sabre";
     this.alert_box = document.querySelector("#alerts");
 
@@ -25,7 +25,7 @@ export default class Game {
     this.stampkey = "buffastamp";
     this.from_cache_complete = false;  //Flag to see if game was loaded from cache
 
-    let wod_ts = 150;
+    let wod_ts = 200;
 
     let self = this;
     self.lcldb.getItem(self.stampkey, function(err, stamp) {
