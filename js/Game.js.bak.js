@@ -32,7 +32,7 @@ export default class Game {
 
   init() {
     const self = this;
-    
+
     self.lcldb.getItem(self.stampkey, function(err, stamp) {
       if(self.wod_ts == stamp) {
         self.lcldb.getItem(self.statuskey, function(err, status) {
@@ -46,7 +46,7 @@ export default class Game {
           }
         });
       } else {
-        self.lcldb.setItem(self.stampkey, wod_ts);
+        self.lcldb.setItem(self.stampkey, self.wod_ts);
         self.lcldb.setItem(self.statekey, []);
         self.game_status = "ACTIVE";
         self.lcldb.setItem(self.statuskey, "ACTIVE");
