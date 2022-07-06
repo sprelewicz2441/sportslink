@@ -17,7 +17,7 @@ export default class Game {
     this.lcldb = localforage.createInstance({
       name: "Buffale",
       storeName: "stateandstats"
-    });;
+    });
     // cache keys
     this.statekey = "buffastate"; //Key for storing game state
     this.statuskey = "buffastatus";
@@ -29,7 +29,7 @@ export default class Game {
 
     let self = this;
     self.lcldb.getItem(self.stampkey, function(err, stamp) {
-      if(wod_ts == stamp) {
+      if(self.wod_ts == stamp) {
         self.lcldb.getItem(self.statuskey, function(err, status) {
           self.game_status = status;
           self.from_cache = true;
