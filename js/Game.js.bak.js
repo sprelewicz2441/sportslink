@@ -27,7 +27,12 @@ export default class Game {
 
     let wod_ts = 225;
 
-    let self = this;
+    this.init();
+  }
+
+  init() {
+    const self = this;
+    
     self.lcldb.getItem(self.stampkey, function(err, stamp) {
       if(self.wod_ts == stamp) {
         self.lcldb.getItem(self.statuskey, function(err, status) {
@@ -48,11 +53,6 @@ export default class Game {
       }
     });
 
-    this.init();
-  }
-
-  init() {
-    const self = this;
     this.lcldb.getItem(self.statskey, function(err, obj) {
       if(!obj) {
         obj = {};
