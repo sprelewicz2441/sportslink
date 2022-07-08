@@ -9,8 +9,8 @@ export default class Game {
     this.currentGuess = '';
     this.game_status = '';
     this.allGuesses = [];
-    this.wordOfDay = "manto";
-    this.game_hint = "bisons";
+    this.wordOfDay = "mafia";
+    this.game_hint = "You, probably";
     this.alert_box = document.querySelector("#alerts");
 
     // Setup cache
@@ -24,7 +24,7 @@ export default class Game {
     this.statskey = "buffastats";
     this.stampkey = "buffastamp";
     this.from_cache_complete = false;  //Flag to see if game was loaded from cache
-    this.wod_ts = 225;
+    this.wod_ts = 230;
 
     this.init();
   }
