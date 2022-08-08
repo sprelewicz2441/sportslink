@@ -24,7 +24,7 @@ export default class Game {
     this.statskey = "buffastats";
     this.stampkey = "buffastamp";
     this.from_cache_complete = false;  //Flag to see if game was loaded from cache
-    this.wod_ts = 235;
+    this.wod_ts = 300;
 
     this.init();
   }
